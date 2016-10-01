@@ -5,10 +5,12 @@ Tool to speed up settings development for Transpower standard arc-flash protecti
 == Installation
 
 This tool:
+
 * uses Python (either 2.7.x or 3.5.x). 
 * uses the standard http://www.transpower.co.nz[Transpower] SEL-751 arc-flash protection package.
 
 The purpose of this tool is to:
+
 * allow efficient production of arc-flash protection settings.
 * allow efficient production of arc-flash IEC 61850 GOOSE "virtual wiring".
 * save people from having to carry out mind-numbingly tedious minor changes.
@@ -25,9 +27,11 @@ The purpose of this tool is to:
 . Edit the new configuration file. Instructions are included in the file.
 . Run the script `automate.py` on the configuration file. Something like `automate.py my_configuration_file.txt`.
 . In the `output` folder, you will now find:
+
 .* an `rdb` file
 .* an `scd` file
 .* a `selaprj` file
+
 . Carry out some checks to see that these look correct.
 
 == How this tool works?
@@ -35,24 +39,32 @@ The purpose of this tool is to:
 It's not very hard. Look at the code and learn something new.
 
 == How to Contribute
+
 * Don't like how this works? File an issue.
+
 * Think you can do better? File an issue making a suggestion.
+
 * Want to modify this to make it better? Submit a pull request.
 
 == TODO
+
 * Import the IEC61850 relay Python script
 * Allow for: 
+
 *. dataset changes
 *. transmit message name changes
 *. MAC address changing and re-numbering
+
 * Investigate default or empty SEL rdb files
 * Investigate complexity with opening rdb file
 * Copy relays and creating multiple copies.
+
 *. Update the TID. For coupler and riser relays append COUPLER and RISER, e.g. ERE2042 COUPLER.
 *. Disable any unused sensors using the AFSENSn setting as detailed in section 4.5.2Error: Reference source not found.
 *. Set LT01, LT02 and LT03 according to Table  3 .4 andError: Reference source not found Table  3 .5 and the logic diagram.
 *. If the Prot1 relay watchdog  is not wired into this relay, set  SV10 to NA #NOT IN302 #PROT 1 WATCHDOG to disable the front panel alarm.
 *. Update settings:
+
 *.. IPADDR
 *.. SUBNETM
 *.. DEFRTR
