@@ -6,7 +6,7 @@ Tool to speed up settings development for Transpower standard arc-flash protecti
 
 This tool:
 * uses Python (either 2.7.x or 3.5.x). 
-* uses the standard www.transpower.co.nz{Transpower} SEL-751 arc-flash protection package.
+* uses the standard http://www.transpower.co.nz[Transpower] SEL-751 arc-flash protection package.
 
 The purpose of this tool is to:
 * allow efficient production of arc-flash protection settings.
@@ -16,8 +16,8 @@ The purpose of this tool is to:
 
 == How To Use
 
-. Ensure Python is installed (https://www.python.org/downloads/{how?})
-. Ensure Git is installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git{how?})
+. Ensure Python is installed (https://www.python.org/downloads/[how?])
+. Ensure Git is installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[how?])
 . Ensure The Transpower standard package is readily accessible.
 . Clone this repository (`git clone https://github.com/danyill/SEL-751-Arc-Flash-Speed-Up`)
 . Copy the standard package into the root folder of this repository.
@@ -34,23 +34,30 @@ The purpose of this tool is to:
 
 It's not very hard. Look at the code and learn something new.
 
-1. Update the TID. For coupler and riser relays append COUPLER and RISER, e.g. ERE2042 COUPLER.
-2. Disable any unused sensors using the AFSENSn setting as detailed in section 4.5.2Error: Reference source not found.
-3. Set LT01, LT02 and LT03 according to Table  3 .4 andError: Reference source not found Table  3 .5 and the logic diagram.
-4. If the Prot1 relay watchdog  is not wired into this relay, set  SV10 to NA #NOT IN302 #PROT 1 WATCHDOG to disable the front panel alarm.
-5. Update Ethernet settings:
-a. IPADDR
-b. SUBNETM
-c. DEFRTR
-d. TCBAN
-e. FTPCBAN
-6. Update SCADA related settings such as DNP addresses:
-a. DNPADR
-b. DNPIP1
-
 == How to Contribute
 * Don't like how this works? File an issue.
 * Think you can do better? File an issue making a suggestion.
 * Want to modify this to make it better? Submit a pull request.
 
+== TODO
+* Import the IEC61850 relay Python script
+* Allow for: 
+*. dataset changes
+*. transmit message name changes
+*. MAC address changing and re-numbering
+* Investigate default or empty SEL rdb files
+* Investigate complexity with opening rdb file
+* Copy relays and creating multiple copies.
+*. Update the TID. For coupler and riser relays append COUPLER and RISER, e.g. ERE2042 COUPLER.
+*. Disable any unused sensors using the AFSENSn setting as detailed in section 4.5.2Error: Reference source not found.
+*. Set LT01, LT02 and LT03 according to Table  3 .4 andError: Reference source not found Table  3 .5 and the logic diagram.
+*. If the Prot1 relay watchdog  is not wired into this relay, set  SV10 to NA #NOT IN302 #PROT 1 WATCHDOG to disable the front panel alarm.
+*. Update settings:
+*.. IPADDR
+*.. SUBNETM
+*.. DEFRTR
+*.. TCBAN
+*.. FTPCBAN
+*.. DNPADR
+*.. DNPIP1
 
