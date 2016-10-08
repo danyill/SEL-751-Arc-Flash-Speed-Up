@@ -1,12 +1,12 @@
 = SEL-751-Arc-Flash-Speed-Up
 
-Tool to speed up settings development for Transpower standard arc-flash protection 
+Tool to speed up settings development for Transpower standard arc-flash protection
 
 == Installation
 
 This tool:
 
-* uses Python (either 2.7.x or 3.5.x). 
+* uses Python (either 2.7.x or 3.5.x).
 * uses the standard http://www.transpower.co.nz[Transpower] SEL-751 arc-flash protection package.
 
 The purpose of this tool is to:
@@ -22,17 +22,18 @@ The purpose of this tool is to:
 . Ensure Git is installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[how?])
 . Ensure The Transpower standard package is readily accessible.
 . Clone this repository (`git clone https://github.com/danyill/SEL-751-Arc-Flash-Speed-Up`)
+. Run `pip install anyconfig toml`
 . Copy the standard package into the root folder of this repository.
-. Copy the default configuration file (`default.config`) to something specific to your project.
-. Edit the new configuration file. Instructions are included in the file.
-. Run the script `automate.py` on the configuration file. Something like `automate.py my_configuration_file.txt`.
+. Copy the default configuration file (`default.toml`) to something specific to your project.
+. Edit the new configuration file. Instructions are included in the file. It's important to get this right. A good toml syntax highlighter (e.g. http://atom.io[Atom] supports this).
+. Run the script `automate.py` on the configuration file. Something like `automate.py my_configuration_file.toml`.
 . In the `output` folder, you will now find:
 
-.* an `rdb` file
-.* an `scd` file
-.* a `selaprj` file
+ * a series of folders, one for each bay containing SEL-751 exported settings files
+ * an `scd` file
+ * a `selaprj` file
 
-. Carry out some checks to see that these look correct.
+. Carry out some checks to see that these look correct. Transpower accepts none (i.e. nil, zero, nada etc.) liability for any errors whatsoever in this product and the user shall carefully veryify that the tool output is correct.
 
 == How this tool works?
 
@@ -49,7 +50,7 @@ It's not very hard. Look at the code and learn something new.
 == TODO
 
 * Import the IEC61850 relay Python script
-* Allow for: 
+* Allow for:
 
 *. dataset changes
 *. transmit message name changes
@@ -72,4 +73,3 @@ It's not very hard. Look at the code and learn something new.
 *.. FTPCBAN
 *.. DNPADR
 *.. DNPIP1
-
