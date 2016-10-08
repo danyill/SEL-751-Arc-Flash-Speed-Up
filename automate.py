@@ -28,7 +28,6 @@ def dprint(str):
 
 class PrimaryBay
 
-
 print conf['Primary']['Bus']
 print conf['Primary']['Coupler']
 print conf['Secondary']
